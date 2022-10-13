@@ -1,6 +1,10 @@
-import { IsString, IsEmail } from 'class-validator'
+import {
+    IsString,
+    IsEmail
+} from 'class-validator'
 
 export class userCreatedto {
+
     @IsString()
     name: string;
 
@@ -9,4 +13,5 @@ export class userCreatedto {
 
     @IsString()
     password: string;
+
 }

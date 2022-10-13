@@ -15,8 +15,10 @@ import { MongooseModule } from '@nestjs/mongoose';
         isGlobal: true
     }
   ),
-  MongooseModule.forRoot(process.env.DATABASE_URL),
-    AuthModule,UserModule],
+    MongooseModule.forRoot(process.env.DATABASE_URL),
+    AuthModule,
+    UserModule],
+  
   controllers: [AppController],
   providers: [AppService],
 })

@@ -1,6 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { User, UserDocument } from 'database/models/user.schema';
+import {
+    User,
+    UserDocument
+} from 'database/models/user.schema';
 import { Model } from 'mongoose';
 import { userCreatedto } from './dto/userCreate.dto';
 
@@ -23,8 +26,11 @@ export class UserService {
 
      findUserByEmail(email: string)
      {
-         return this.userModel.findOne({ email });
-     }
-    
+         return this.userModel.findOne(
+             {
+             email
+             }
+         );
+     }  
 
 }

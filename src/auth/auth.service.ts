@@ -11,14 +11,19 @@ export class AuthService {
     ) { }
 
 
-    async validateUser(loginDTO : logindto) {
+    async validateUser(loginDTO: logindto) {
         const user = await this.userService.findUserByEmail(loginDTO.email);
 
         if (user)
         {
             if (user.password == loginDTO.password)
             {
-                const payload = { email: user.email, id: user.id, name:user.name };
+                const payload = {
+                    email: user.email,
+                    id: user.id,
+                    name: user.name
+                };
+
                 const token = this.jwtService.sign(payload);
             
             return {
@@ -38,7 +43,6 @@ export class AuthService {
             user:null,
             message:"User not exists"
         };
-
 
     }
     
